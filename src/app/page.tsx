@@ -7,6 +7,10 @@ const tools = {
     { name: "Lorem Ipsum Generator", href: "/tools/lorem-ipsum", desc: "Generate placeholder text for designs and layouts" },
     { name: "Slug Generator", href: "/tools/slug-generator", desc: "Create URL-friendly slugs from any text" },
     { name: "Diff Checker", href: "/tools/diff-checker", desc: "Compare two texts and find the differences" },
+    { name: "Word Frequency Counter", href: "/tools/word-frequency", desc: "Analyze word frequency and text statistics" },
+    { name: "Text Repeater", href: "/tools/text-repeater", desc: "Repeat text multiple times with custom separators" },
+    { name: "Text to Binary", href: "/tools/text-to-binary", desc: "Convert text to binary, hex, and octal" },
+    { name: "Morse Code Translator", href: "/tools/morse-code", desc: "Translate text to Morse code with audio playback" },
   ],
   "Developer Tools": [
     { name: "JSON Formatter", href: "/tools/json-formatter", desc: "Format, validate, and minify JSON data" },
@@ -16,22 +20,44 @@ const tools = {
     { name: "HTML Entity Encoder", href: "/tools/html-entities", desc: "Encode and decode HTML entities" },
     { name: "Markdown to HTML", href: "/tools/markdown-to-html", desc: "Convert Markdown text to clean HTML" },
     { name: "CSV to JSON", href: "/tools/csv-to-json", desc: "Convert CSV data to JSON format" },
+    { name: "JSON to CSV", href: "/tools/json-to-csv", desc: "Convert JSON arrays to CSV format" },
+    { name: "Cron Expression Generator", href: "/tools/cron-generator", desc: "Build and understand cron schedule expressions" },
+    { name: "Number Base Converter", href: "/tools/number-base-converter", desc: "Convert between binary, hex, octal, and decimal" },
+    { name: "IP Address Info", href: "/tools/ip-info", desc: "IP lookup, validator, and subnet calculator" },
   ],
   Generators: [
     { name: "Password Generator", href: "/tools/password-generator", desc: "Generate secure random passwords" },
     { name: "UUID Generator", href: "/tools/uuid-generator", desc: "Generate unique UUIDs/GUIDs" },
     { name: "QR Code Generator", href: "/tools/qr-code-generator", desc: "Create QR codes for any text or URL" },
     { name: "Hash Generator", href: "/tools/hash-generator", desc: "Generate SHA-256, SHA-512, and MD5 hashes" },
+    { name: "Favicon Generator", href: "/tools/favicon-generator", desc: "Create favicons from text with custom colors" },
+    { name: "Gradient Generator", href: "/tools/gradient-generator", desc: "Create CSS gradients with live preview" },
+    { name: "Box Shadow Generator", href: "/tools/box-shadow", desc: "Generate CSS box shadows visually" },
+    { name: "Placeholder Images", href: "/tools/placeholder-images", desc: "Generate placeholder image URLs instantly" },
+    { name: "Random Number Generator", href: "/tools/random-number", desc: "Random numbers, dice roller, and coin flipper" },
   ],
   Converters: [
     { name: "Color Converter", href: "/tools/color-converter", desc: "Convert between HEX, RGB, HSL, and CMYK" },
     { name: "Unit Converter", href: "/tools/unit-converter", desc: "Convert length, weight, temperature, and more" },
     { name: "Timestamp Converter", href: "/tools/timestamp-converter", desc: "Convert Unix timestamps to human-readable dates" },
     { name: "Image to Base64", href: "/tools/image-to-base64", desc: "Convert images to Base64 data URIs" },
+    { name: "Aspect Ratio Calculator", href: "/tools/aspect-ratio", desc: "Calculate and lock aspect ratios for images and video" },
+    { name: "Percentage Calculator", href: "/tools/percentage-calculator", desc: "Calculate percentages, changes, and ratios" },
+  ],
+  "Productivity Tools": [
+    { name: "Pomodoro Timer", href: "/tools/pomodoro-timer", desc: "Focus timer with work and break intervals" },
+    { name: "Stopwatch", href: "/tools/stopwatch", desc: "Stopwatch with lap timer and split times" },
+    { name: "Typing Speed Test", href: "/tools/typing-test", desc: "Test your typing speed and accuracy" },
+  ],
+  "Reference Tools": [
+    { name: "Emoji Picker", href: "/tools/emoji-picker", desc: "Search and copy emojis with one click" },
+    { name: "Character Map", href: "/tools/character-map", desc: "Browse and copy special Unicode characters" },
   ],
 };
 
 export default function Home() {
+  const totalTools = Object.values(tools).reduce((sum, cat) => sum + cat.length, 0);
+
   return (
     <div className="max-w-6xl mx-auto px-4 py-12">
       <section className="text-center mb-16">
@@ -39,12 +65,11 @@ export default function Home() {
           Free Online Tools
         </h1>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Fast, free, and private. No signup required. No data stored.
-          Just tools that work.
+          {totalTools} free tools for developers, writers, designers, and everyone else.
+          No signup. No tracking. Just tools that work.
         </p>
       </section>
 
-      {/* Ad slot */}
       <div className="ad-slot my-8 p-4 bg-gray-100 rounded text-center text-gray-400 text-sm min-h-[90px] flex items-center justify-center">
         Ad Space
       </div>
@@ -71,7 +96,6 @@ export default function Home() {
         </section>
       ))}
 
-      {/* Bottom ad slot */}
       <div className="ad-slot my-8 p-4 bg-gray-100 rounded text-center text-gray-400 text-sm min-h-[90px] flex items-center justify-center">
         Ad Space
       </div>
