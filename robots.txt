@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jcropro.github.io/toolbox/sitemap.xml
